@@ -1,20 +1,16 @@
 using System;
-public class intern{
-    public string fName {get; set;}
-    public string lName {get; set;}
-    public string gender {get; set;}
-    public DateTime dateOfBirth {get; set;}
-    private string phoneNumber {get; set;}
-    public string birthPlace {get; set;}
-    public int age{
+
+public class intern : Person{
+
+    public int Age{
         get {return calcAge();}
         set {}
     }
     public int calcAge(){
         int surplus = 0;
-        int years = DateTime.Now.Year - dateOfBirth.Year;
-        int months = DateTime.Now.Month - dateOfBirth.Month;
-        int days = DateTime.Now.Day - dateOfBirth.Day;
+        int years = DateTime.Now.Year - DateOfBirth.Year;
+        int months = DateTime.Now.Month - DateOfBirth.Month;
+        int days = DateTime.Now.Day - DateOfBirth.Day;
 
         if(((days == 0 || days > 0) && months == 0) || (months > 0)){
             surplus = 1;
@@ -22,19 +18,23 @@ public class intern{
 
         return years + surplus;
     }
-    public bool isGraduated {get; set;}
-    public string fullName(){
-        return lName + " " + fName;
+    public bool IsGraduated {get; set;}
+
+    public string FullName(){
+        return LastName + " " + FirstName;
     }
 
-    public intern(string fname, string lname, string gder, DateTime dofB, string phonenumber, string birthplace, int Age, bool isgraduated){
-        fName = fname;
-        lName = lname;
-        gender = gder;
-        dateOfBirth = dofB;
-        phoneNumber = phonenumber;
-        birthPlace = birthplace;
-        age = Age;
-        isGraduated = isgraduated;
+    public intern(string fname, string lname, string gender, DateTime dofB, string phonenumber, string birthplace, int age, bool isgraduated){
+
+        FirstName = fname;
+        LastName = lname;
+        Gender = gender;
+        DateOfBirth = dofB;
+        PhoneNumber = phonenumber;
+        BirthPlace = birthplace;
+        Age = age;
+        IsGraduated = isgraduated;
     }
+
+
 }
