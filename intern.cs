@@ -24,17 +24,6 @@ public class intern : Person{
         return LastName + " " + FirstName;
     }
 
-    public intern(string fname, string lname, string gender, DateTime dofB, string phonenumber, string birthplace, int age, bool isgraduated){
-
-        FirstName = fname;
-        LastName = lname;
-        Gender = gender;
-        DateOfBirth = dofB;
-        PhoneNumber = phonenumber;
-        BirthPlace = birthplace;
-        Age = age;
-        IsGraduated = isgraduated;
-    }
 
 
 }
